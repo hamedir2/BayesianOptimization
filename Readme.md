@@ -3,7 +3,8 @@ BioAutomata
 
 This project includes the software packages used to perform the analysis explained in the publication below:
 
-
+Towards a fully automated algorithm driven platform for biosystems design
+Mohammad HamediRad, Ran Chao, Scott Weisberg, Jiazhang Lian, Saurabh Sinha and Huimin Zhao
 
 This is NOT a stand-alone code and was used to run the Spearmint program previously developed by Jasper Snoek and co-workers.
 
