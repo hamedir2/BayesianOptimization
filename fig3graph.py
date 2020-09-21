@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Mar  6 13:26:25 2019
-
-@author: scott
-"""
 
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
@@ -25,18 +19,12 @@ with open('R3new.csv', encoding='UTF-8') as csvfile:
         y.append(float(row[1]))
         z.append(float(row[2]))
 
-#x = np.random.standard_normal(100)
-#y = np.random.standard_normal(100)
-#z = np.random.standard_normal(100)
 d = np.random.standard_normal(48)
 a = '#FF0000'
 b = '#00FF00'
 c = '#FFA500'
 
-ax.scatter(x[:46], y[:46], z[:46])#, c=d, cmap=plt.get_cmap('binary'),depthshade=False)
-#ax.scatter(x[48:96],y[48:96],z[48:96],c=a,depthshade=False,marker='.')
-#ax.scatter(x[96:144],y[96:144],z[96:144],c=b,depthshade=False,marker='.')
-#ax.scatter(x[144:192],y[144:192],z[144:192],c=c,depthshade=False,marker='.')
+ax.scatter(x[:46], y[:46], z[:46])
 ax.set_xlabel('Promoter 1',fontname='Arial')
 ax.set_ylabel('Promoter 2',fontname='Arial')
 ax.set_zlabel('Promoter 3',fontname='Arial')
