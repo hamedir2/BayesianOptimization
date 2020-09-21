@@ -6,20 +6,23 @@ import math
 import os
 import time
 import random
-#This function gets X as an input and returns y as an output, basically performing the function of experiment
 
+
+#returns the result sampled from a gaussian distribution at point x with the average mu and standard deviation of sig
 
 def gaussian(x, mu, sig):
     return np.exp(-np.power(x - mu, 2.) / (2 * np.power(sig, 2.)))
+#This function gets X as an input and returns y as an output, basically performing the function of experiment
 def Oracle(x):
   return a1*gaussian(x[0],mu1,sig1)+a2*gaussian(x[1],mu2,sig2)+a3*gaussian(x[2],mu3,sig3)
 
 result=[]
+# This defines the gaussian process that's going to be used for optimization.
 [a1, a2, a3, mu1, mu2, mu3, sig1, sig2, sig3]= [13.711405957015819, 13.036115828943784, 6.742839345189473, 18.057531204319893, 1.0200066313062184, 14.64093591042004, 9.153419205289197, 20.6676324903278, 18.33180805140832]
-print max
+
 max=0
 
-print range(1,25)
+#This is a brute force search to find the maximum of the function.
 for i in range(1,25):
 	for j in range(1,25):
 		for k in range(1,25):
@@ -27,7 +30,7 @@ for i in range(1,25):
 			if current_val>max:
 				max=current_val
 min=-max
-print max
+
 for k in range(100):
 	print min
 	NotFoundMin=True
@@ -36,6 +39,7 @@ for k in range(100):
 	first99=10000
 	while NotFoundMin:
 		counter=counter+1
+		#this command calls the spearmint-lite.py code on the terminal
 		subprocess.call(["python", "spearmint-lite.py", "braninpy", "--method=GPEIOptChooser", "--method-args=noiseless=1" ])
 
 		with open('braninpy/Results.dat','r') as f:
@@ -64,6 +68,7 @@ for k in range(100):
 		if counter>400:
 			break
 	os.remove("braninpy/Results.dat")
+	#try and except is used because in the first iteration there's nothing to remove.
 	try: 
 		os.remove("braninpy/chooser.GPEIOptChooser.pkl")
 	except:
