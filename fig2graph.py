@@ -1,15 +1,9 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Mar  5 16:08:33 2019
 
-@author: scott
-"""
 
 import numpy as np
 #%matplotlib inline
 
 bounds=np.array([[1.0,24.0]])
-#bounds=np.array([[-1.0,2.0]])
 noise=0.0
 
 def gaussian(x, mu, sig):
@@ -20,9 +14,6 @@ def Oracle(x):
   	y.append(6*gaussian(i,4,1)+4*gaussian(i,7,1.5)+9*gaussian(i,16,1.8))
   return y
 
-#def f(X, noise=noise):
-#    #return (-np.sin(3*X) - X**2 + 0.7*X + noise * np.random.randn(*X.shape))
-#    return (-(1.4-3*X)*np.sin(18*X)) + noise*np.random.randn(*X.shape)
 
 import matplotlib.pyplot as plt
 
