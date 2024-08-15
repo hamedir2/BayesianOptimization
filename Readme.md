@@ -16,3 +16,5 @@ Advances in Neural Information Processing Systems, 2012
 
 
 The code was entirely adapted from https://github.com/JasperSnoek/spearmint
+
+iBioFAB code is only the input to the proprietary backend code that was developed and used by the iBioFAB team and reported in previous publications. figxgraph.py files are for generating graphs that were included in the final publication.
